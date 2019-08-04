@@ -43,7 +43,7 @@ def setup_database(force, source_sql, verbose):
 		raise Exception("Database %s already exists" % (db_name,))
 
 	if frappe.conf.get('dockerized_db', 0) == 1:
-		dbman.create_user(db_name, frappe.conf.db_password, '%%')
+		dbman.create_user(db_name, frappe.conf.db_password, '%')
 		if verbose: print("Created user %s@%s" % (db_name, '%'))
 	else:
 		dbman.create_user(db_name, frappe.conf.db_password)
