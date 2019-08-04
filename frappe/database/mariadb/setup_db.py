@@ -69,7 +69,7 @@ def setup_help_database(help_db_name):
 			# user already exists
 			if e.args[0] != 1396: raise
 		dbman.create_database(help_db_name)
-		dbman.grant_all_privileges(help_db_name, help_db_name, '%')
+		dbman.grant_all_privileges(help_db_name, help_db_name)
 		dbman.flush_privileges()
 
 def drop_user_and_database(db_name, root_login, root_password):
