@@ -48,7 +48,7 @@ def setup_database(force, source_sql, verbose):
 	dbman.create_database(db_name)
 	if verbose: print("Created database %s" % db_name)
 
-	dbman.grant_all_privileges(db_name, db_name, '%')
+	dbman.grant_all_privileges(db_name, db_name)
 	dbman.flush_privileges()
 	if verbose: print("Granted privileges to user %s and database %s" % (db_name, db_name))
 
